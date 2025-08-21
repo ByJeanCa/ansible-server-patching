@@ -2,5 +2,5 @@
 name: Server Patching Automation
 hosts: servers
 become: true
-tasks: 
-  - 
+roles: 
+  - update_packages
