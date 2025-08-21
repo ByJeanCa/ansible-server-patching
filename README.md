@@ -1,13 +1,24 @@
-# ansible-server-patching
+# 🔄 Ansible Server Patching
+Simple playbook for updating Linux servers with Ansible.
 
-3. Server Patching Automation
+# # 🚀 How to use
+Edit the inventory in inventory/hosts.ini with your servers:
+`1.2.3.4 ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/id_rsa
+`  
+# # Test connection:
+`ansible -i inventory/hosts.ini all -m ping`  
 
-Objetivo: Automatizar actualizaciones de paquetes y parches de seguridad en Linux.
+# # Run the patch:
+`ansible-playbook -i inventory/hosts.ini server_patch.yml
+`  
 
-Tareas:
+# # 📦 What it does
+* Updates packages (apt or dnf depending on distro) an generates a report.
+  
+# # 📂 Structure
+inventory/            # Inventories  
+roles/update_packages # Role with update tasks  
+server_patch.yml      # Main playbook
 
-Crear un playbook Ansible que actualice todos los paquetes y reinicie si es necesario.
 
-Generar un reporte simple del antes/después (versión de paquetes).
-
-Skills cubiertas: Linux admin, Ansible, seguridad.
+# # #Author: @ByJeanCa
