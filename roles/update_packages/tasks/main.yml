@@ -5,4 +5,9 @@
   args:
     executable: /bin/bash
   changed_when: false
-  
+
+
+- name: Update packages
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: dist
