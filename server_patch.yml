@@ -1,0 +1,6 @@
+---
+name: Server Patching Automation
+hosts: servers
+become: true
+tasks: 
+  - 
