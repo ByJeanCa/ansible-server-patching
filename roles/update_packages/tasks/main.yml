@@ -1,13 +1,20 @@
 ---
-- name: Generate old packages report before updated
+- name: Generate packages report before update
   ansible.builtin.shell: | 
     dbpk -l | tee -a /var/tmp/packages_report_$(date +"%Y-%m-%d_%H-%M-%S").txt
   args:
     executable: /bin/bash
   changed_when: false
 
-
 - name: Update packages
   ansible.builtin.apt:
     update_cache: yes
     upgrade: dist
+
+- name: Generate packages report after update
+  ansible.builtin.shell: |
+    dpkg -l | tee -a /var/tmp/packages_report_$(date +"%Y-%m-%d_%H-%M-%S").txt
+  args:
+    executable: bin/bash
+  changed_when: false
+
