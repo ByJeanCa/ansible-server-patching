@@ -1,0 +1,2 @@
+[servers]
+testsv ansible_host=3.22.188.54 ansible_user=ubuntu ansible_port=22 ansible_ssh_private_key_file=~/Downloads/test.pem
