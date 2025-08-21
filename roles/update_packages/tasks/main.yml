@@ -15,6 +15,6 @@
   ansible.builtin.shell: |
     dpkg -l | tee -a /var/tmp/packages_report_$(date +"%Y-%m-%d_%H-%M-%S").txt
   args:
-    executable: bin/bash
+    executable: /bin/bash
   changed_when: false
 
